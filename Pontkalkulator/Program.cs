@@ -43,9 +43,9 @@ foreach(var i in strepo.GetAll())
 Console.WriteLine($"\nTeljesítette a félévet: {strepo.CountIsFinished}");
 Console.WriteLine("\nNem teljesítette:");
 
-foreach(var i in strepo.LeftCredits())
+foreach(var i in strepo.LeftCreditsNameList())
 {
-    Console.WriteLine(i);
+    Console.WriteLine($"- {i}");
 }
 
 

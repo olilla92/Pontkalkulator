@@ -30,6 +30,10 @@ namespace Pontkalkulator.Repos
             return _record.Where(x => x.CreditNumber < 44).ToList();
         }
 
-        
+        public List<string> LeftCreditsNameList()
+        {
+            return _record.Where(x => x.CreditNumber < 44).Select(x => x.StudentName).ToList();
+        }
+
     }
 }
