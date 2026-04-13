@@ -48,4 +48,6 @@ foreach(var i in strepo.LeftCreditsNameList())
     Console.WriteLine($"- {i}");
 }
 
-
+Console.WriteLine("\nHiányzó kreditek:");
+foreach(var i in strepo.LeftCredits())
+    Console.WriteLine($"\t{i.StudentName} nem teljesítette: {44 - i.CreditNumber} hiányzik.");
