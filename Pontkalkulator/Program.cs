@@ -1,8 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Pontkalkulator.Models;
+using Pontkalkulator.Repos;
 
 Console.WriteLine("Hello, World!");
+StudentCreditRepo strepo = new StudentCreditRepo();
+
 StudentCredit first = new StudentCredit("Kis Anna", "neptunkod123", 43);
+
+Console.WriteLine("Osztály készítése: " + "\n");
 try
 {
     Console.WriteLine(first);
@@ -27,4 +32,20 @@ Console.WriteLine(first);
 Console.Write("Kezd új félévet? ");
 bool newSemester = Convert.ToBoolean(Console.ReadLine());
 first.StartOfSemester(newSemester);
-Console.WriteLine(first);
+Console.WriteLine(first + "\n");
+
+Console.WriteLine("Repository feladatok:" + "\n");
+
+foreach(var i in strepo.GetAll())
+{
+    Console.WriteLine(i);
+}
+Console.WriteLine($"\nTeljesítette a félévet: {strepo.CountIsFinished}");
+Console.WriteLine("\nNem teljesítette:");
+
+foreach(var i in strepo.LeftCredits())
+{
+    Console.WriteLine(i);
+}
+
+
